@@ -1,3 +1,6 @@
+# Patrick 10.09.2025
+# Dislaying solved equations
+
 print("8 reasons why:")
 add = 4+4
 print(f"4 + 4 = {add}")
