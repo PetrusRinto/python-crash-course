@@ -1,3 +1,6 @@
+# Patrick 10.09.2025
+# A program that removes whitesaces and displays quotes in a appealing way
+
 userInput_1 = " tony"
 userInput_2 = "stark "
 
