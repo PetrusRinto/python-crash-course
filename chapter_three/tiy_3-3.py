@@ -2,7 +2,7 @@
 # My own list of vehicles (I'm a car guy)
 
 brand = ['Nissan','Toyota','Mitsubishi','Alfa Romeo','Ferrari','Porsche']
-kind = ['R-34','MR2 2GR Edition','Evo V','Quadrifoglio','296 GTB']
+kind = ['R-34','MR2 2GR Edition','Evo V','Quadrifoglio V6','296 GTB']
 
 # Hard coded since I need more loop experience
 vehicle_0 = (f"{brand[0]} {kind[0]}")
