@@ -6,4 +6,4 @@ names = ['Rebekka', 'Natalie', 'Bjørn-André', 'Morten', 'Dina', 'Kristian', 'T
 message = "is my friend!"
 
 for name in names:
-    print(f"{name} {message}")
+    print(f"{name} {message}") # IT WORKED
