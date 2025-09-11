@@ -16,4 +16,4 @@ vehicles = [vehicle_0,vehicle_1,vehicle_2,vehicle_3,vehicle_4]
 
 # Looping time
 for vehicle in vehicles:
-    print(f"I want to own a {vehicle} some day.") # Success
+    print(f"I want to drive a {vehicle} some day.") # Success
