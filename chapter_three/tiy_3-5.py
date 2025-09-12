@@ -18,7 +18,7 @@ print(f'\nUnfortunately {too_busy.title()} is busy and can not attend.') # Sad m
 
 # Wait, I can invite someone else to take Ghandi's place!
 new_guest = 'gwen' # No other than Gwen Stacy herself
-guests.append(new_guest) # Adding Gwen to the list
+guests.insert(1, new_guest) # Adding Gwen to the list
 
 print('\n') # Newline
 
