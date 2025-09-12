@@ -24,4 +24,19 @@ print('\n') # Newline
 # Informing of more space
 print('Good news! I found a bigger table.')
 
-extra_guests = ['']
+# Defineing extra guests for the bigger table
+extra_guest1 = 'zuko'
+extra_guest2 = 'aang'
+extra_guest3 = 'asami'
+
+guests.append(extra_guest1)
+guests.append(extra_guest2)
+guests.append(extra_guest3)
+
+print('\n') # Newline
+
+# Reusing the loop from before
+for guest in guests:
+    print(f"Dear {guest.title()}, I invite you to a humble dinner party. Well met!")
+    # Output: The same list, but Ghandi gone and Gwen present
+print('\n') # Newline
