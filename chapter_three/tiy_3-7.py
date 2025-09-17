@@ -44,6 +44,7 @@ print('\n') # Newline
 print(f"I can only invite two people for dinner. This is a result of the table not being able to arrive in time.")
 print('\n') # Newline
 
+# Patrick 17.09.2025
 # Popping guests who are uninvited
 popped_one = guests.pop(0)
 
