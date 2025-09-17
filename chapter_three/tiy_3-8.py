@@ -9,3 +9,6 @@ print(places)
 
 # temporarily sorting the list in alphabetical order
 print(sorted(places))
+
+# verifying that the change was temporary
+print(places)
