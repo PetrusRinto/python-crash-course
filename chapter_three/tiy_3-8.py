@@ -6,3 +6,6 @@ places = ['hokkaido', 'zanzibar', 'beijing', 'hong kong', 'nordkapp']
 
 # printing in original order
 print(places)
+
+# temporarily sorting the list in alphabetical order
+print(sorted(places))
