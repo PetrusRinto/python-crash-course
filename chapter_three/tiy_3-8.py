@@ -1,0 +1,8 @@
+# Patrick 17.09.2025
+# Creating a list of places I want to visit and sorting them differently
+
+# Storing the places I want to visit in a variable
+places = ['hokkaido', 'zanzibar', 'beijing', 'hong kong', 'nordkapp']
+
+# printing in original order
+print(places)
