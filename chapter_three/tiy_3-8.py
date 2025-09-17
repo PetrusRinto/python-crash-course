@@ -12,3 +12,5 @@ print(sorted(places))
 
 # verifying that the change was temporary
 print(places)
+
+# temporarily sorting in reverse order
