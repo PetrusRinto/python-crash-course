@@ -14,7 +14,7 @@ print(sorted(places))
 print(places)
 
 # temporarily sorting in reverse order
-reverse_sorted = sorted(places, reverse=True)
+reverse_sorted = sorted(places, reverse=True) # 18.09.2025
 print(reverse_sorted)
 
 # verifying the list change
