@@ -14,9 +14,8 @@ print(sorted(places))
 print(places)
 
 # temporarily sorting in reverse order
-sorted = sorted(places)
-sorted.reverse()
-print(sorted)
+reverse_sorted = sorted(places, reverse=True)
+print(reverse_sorted)
 
 # verifying the list change
 print(places)
