@@ -13,7 +13,7 @@ print(f'\nThe list displayed in alphabetical order:')
 print(f'{sorted(places)}')
 
 # verifying that the change was temporary
-print(f'The list displayed in original order again:')
+print(f'\nThe list displayed in original order again:')
 print(places)
 
 # temporarily sorting in reverse order
@@ -22,5 +22,5 @@ print(f'\nThe list displayed in reverse-alphabetical order:') # 19.09.2025
 print(reverse_sorted)
 
 # verifying the list change
-print(f'The list displayed in original order again:')
+print(f'\nThe list displayed in original order again:')
 print(places)
