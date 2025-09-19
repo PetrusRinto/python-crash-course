@@ -24,3 +24,8 @@ print(reverse_sorted)
 # verifying the list change
 print(f'\nThe list displayed in original order again:')
 print(places)
+
+# reversing the orginal order
+places.reverse()
+print(f'\nThe original list displayed in reverse:')
+print(f'{places}')
