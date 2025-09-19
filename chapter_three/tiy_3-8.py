@@ -29,3 +29,18 @@ print(places)
 places.reverse()
 print(f'\nThe original list displayed in reverse:')
 print(f'{places}')
+
+# reverse again to revert to the original list
+places.reverse()
+print(f'\nThe reversed list displayed in reverse:')
+print(f'{places}')
+
+# using sort() to store the list in alphabetical order
+places.sort()
+print(f'\nThe "original" list displayed in alphabetical order:')
+print(f'{places}')
+
+# storing places in reverse-alphabetical order
+places.sort(reverse=True)
+print(f'\nThe list displayed in reverse-alphabetical order:')
+print(f'{places}')
