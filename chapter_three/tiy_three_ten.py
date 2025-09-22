@@ -7,4 +7,6 @@ countries = ['thailand', 'zanzibar', 'france']
 # a message that pints the list:
 print(f'Original: {countries}')
 
-print(f'Sorted: {sorted(countries)}')
+print(f'\nSorted: {sorted(countries)}') # Alphabetical order, but not permanent
+
+print(f'\nOriginal: {countries}')
