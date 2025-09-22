@@ -4,3 +4,5 @@
 # A regular list of three countries (it will increase).
 countries = ['france', 'thailand', 'zanzibar']
 
+# a message that pints the list:
+print(f'{countries}')
