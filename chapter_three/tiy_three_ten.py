@@ -2,7 +2,9 @@
 # A program that lists countries I want to visit and not
 
 # A regular list of three countries (it will increase).
-countries = ['france', 'thailand', 'zanzibar']
+countries = ['thailand', 'zanzibar', 'france']
 
 # a message that pints the list:
-print(f'{countries}')
+print(f'Original: {countries}')
+
+print(f'Sorted: {sorted(countries)}')
