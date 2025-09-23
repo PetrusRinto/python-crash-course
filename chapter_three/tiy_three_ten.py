@@ -56,5 +56,34 @@ most_fav_int = countries[1]
 print(f'Index 1 should be Japan, my favorite is: {most_fav_int.title()}!')
 
 # Popping out and displaying my least favourite based on the current list.
+print(f"\nCreating a 'pop' variable to output my least favorite in the current list.")
+print(f'- Current list: {countries}')
+
 least_fav_int = countries.pop(0)
-print(f'\n{least_fav_int}')
+
+print(f'- My least favorite country out of the list is: {least_fav_int.title()}')
+print(f'\nFrance is therefore removed from the list.')
+print(f'List without {least_fav_int}:')
+print(f'{countries}')
+
+# Adding China between Japan and Thailand
+print(f'\nI want to add China between Japan and Thailand.')
+countries.insert(1, 'china')
+print(f'China added:')
+print(f'{countries}')
+
+# Removing Thailand with 'del' and adding South-Korea with 'insert'
+print(f'\nRemoving {countries[2]} from the list.')
+del(countries[2])
+countries.insert(2,'south-korea')
+print(f'Adding {countries[2]} to the list.')
+print(f'- New list: {countries}')
+
+# Removing zanzibar from the list so that there is only Asian countries left
+print(f'\nRemoving {countries[-1].title()} from the list.')
+countries.remove('zanzibar')
+print(f'\nAsian countries only:\n{countries}')
+
+# Sorting alphabetically again.
+countries.sort()
+print(f'\nSorted:\n{countries}')
