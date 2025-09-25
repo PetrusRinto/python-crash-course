@@ -11,3 +11,4 @@ pizzas = ['campino', 'napolitan', 'homemade']
 # Looping the pizzas in sentences
 for pizza in pizzas:
     print(f'I like {pizza} pizza!')
+print(f'Pizza is the perfect invention, you can make however you like. My way is the best of course.') # Added a line to express my passion of pizza.
