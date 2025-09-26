@@ -6,4 +6,6 @@ animals = ['cat', 'lion', 'tiger']
 
 # For loop to list each animal
 for animal in animals:
-    print(f'{animal}')
+# 26.05.2025
+    print(f'A {animal} is certainly a cat!\n')
+print(f'Although all these animals are "cats", a {animals[1]} is not a pet and nor is a {animals[2]}!')
