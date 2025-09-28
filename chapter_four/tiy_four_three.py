@@ -1,5 +1,6 @@
 # Patrick 28.09.2025
 # 4-3 Counting to twenty
+# NOTE: The actual solution is in "range.py"
 
 # A for loop that append the numbers 1 to 20 in the numbers' list
 numbers = []
