@@ -7,3 +7,8 @@ menu = ('soup', 'meatballs', 'spaghetti', 'beef', 'salad')
 # For loop to print each food.
 for food in menu:
     print(food.title())
+
+# Modification attempt to force an error
+del(menu[-2])
+print(f'\nNew menu:')
+print(f'{menu}') # Successful error
