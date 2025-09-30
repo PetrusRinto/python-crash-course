@@ -8,7 +8,10 @@ menu = ('soup', 'meatballs', 'spaghetti', 'beef', 'salad')
 for food in menu:
     print(food.title())
 
-# Modification attempt to force an error
-del(menu[-2])
+# Error attempt was here
+
+# Rewriting the tuple to change the menu
+menu = ('soup', 'lasagne', 'spaghetti', 'fish', 'salad')
 print(f'\nNew menu:')
-print(f'{menu}') # Successful error
+for food in menu:
+    print(food.title())
