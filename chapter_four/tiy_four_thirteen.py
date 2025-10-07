@@ -1,16 +1,16 @@
-# Patrick 30.09.2025
+# Patrick 30.09.2025.
 # 4-13 Buffet.
-# Storing menu in a tuple with five basic foods
+# Storing menu in a tuple with five basic foods.
 
-# Storing the menu as a tuple
+# Storing the menu as a tuple.
 menu = ('soup', 'meatballs', 'spaghetti', 'beef', 'salad')
 # For loop to print each food.
 for food in menu:
     print(food.title())
 
-# Error attempt was here
+# Error attempt was here.
 
-# Rewriting the tuple to change the menu
+# Rewriting the tuple to change the menu.
 menu = ('soup', 'lasagne', 'spaghetti', 'fish', 'salad')
 print(f'\nNew menu:')
 for food in menu:

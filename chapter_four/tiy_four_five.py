@@ -6,7 +6,8 @@
 
 # creating a list from one to one million
 one_million = [ million for million in range(1, 1000001) ]
-print(f'The list starts at: {min(one_million)}\nAnd ends at: {max(one_million)}') # Verify the list start at one and ends in one million
+# Verification
+print(f'The list start at: {min(one_million)}\nEnds at: {max(one_million)}') 
 
-# Using sum() function to see how quickly Python can handle adding one million numbers
+# Using sum() to see how quickly Python use math with a million numbers
 print(f'\nThe list added together: {sum(one_million)}')

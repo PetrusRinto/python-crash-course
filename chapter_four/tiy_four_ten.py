@@ -1,12 +1,13 @@
-# Patrick 29.09.2025
-# 4-10 Slices
-# Using one of my earlier programs to slice items
+# Patrick 29.09.2025.
+# 4-10 Slices.
+# Using one of my earlier programs to slice items.
 
-# program from 4-9
+# Program from 4-9.
 cubes = []
 for cube in range(1, 11):
     cubes.append(cube**3)
-# 4-10 assignment
+
+# 4-10 assignment.
 print(f'All of the items in the list:')
 print(f'{cubes}\n')
 print(f'The first three items in the list are:')

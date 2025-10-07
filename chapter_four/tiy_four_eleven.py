@@ -2,8 +2,8 @@
 # 4-11 My Pizzas, Your Pizzas.
 # Copy pizzas from 4-1 and call it 'friend_pizzas'
 
-# Program from 4-1
-my_pizzas = ['campino', 'napolitan', 'homemade'] # renamed it 'my pizzas' for relevance
+# Program from 4-1 and renamed it 'my pizzas' for relevance
+my_pizzas = ['campino', 'napolitan', 'homemade']
 
 # 4-11 Assignment:
 # Copy the list and name it 'friend_pizzas'

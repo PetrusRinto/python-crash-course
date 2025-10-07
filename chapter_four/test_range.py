@@ -1,14 +1,24 @@
 # Patrick 26.09.2025
+# Testing range()
+
+# Explanation
+print(f"\nTo output a list from '0-5' with range(). 0 is defined and then 6.")
+
+print(f"An example with a short range:\n")
 for value in range(0, 6): # This is powerful
     print(value)
-print(f"\nThe 'range()' function in python ends on the second number '{value + 1}' in this case.")
-print(f"This means python will stop the range when the *next* number is the last value defined in the program.")
-print(f"Since the last number in our range() is '{value + 1}', it ends at '{value}'\n")
 
-# Range work with single values
-# Testing
+print(f"\nThe range() stops right before the end value ({value + 1}) here.")
+print("Python never includes that final number — it stops just before.")
+print(f"So, since we defined up to {value + 1}, the loop ends at {value}.\n")
+
+# Testing with single values
 single_num = 5
-print(f'Testing single value in range():\n')
-print(f"The program should start at '0' and stop at '{single_num - 1}' since the variable is '{single_num}'")
+print(f'Testing single value in range().')
+print(f"It starts at 0 and ends at {single_num - 1}:\n")
+
+# Looping through the range
 for single in range(single_num):
     print(f'{single}')
+
+print(f"\nThat's because our end value is {single_num} in this example.\n")
