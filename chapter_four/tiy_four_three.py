@@ -10,7 +10,7 @@ for num in range(1, 21):
 # A variable associated with the appended numbers-list for the counting.
 counting = numbers
 
-# A for loop that counts the numbers' list inclusively.
+# A for loop that counts the numbers' list inclusive.
 for count in counting:
     print(count)
 
