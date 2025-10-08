@@ -49,3 +49,14 @@ print("\nIs 18 and 23 equal to or greater than 20? I predict False.")
 print(age_1 >= 20 and age_2 >= 20)
 
 # Testing if an item is in a list
+certifications = ['az-400', 'az-900', 'az-104']
+if 'az-400' or 'az-104' in certifications:
+    print("\nYou're qualified!")
+else:
+    print("\nYou are not qualified yet.")
+
+# Testing if an item is not in the list
+if 'MS-500' not in certifications:
+    print("\nYou are missing certification: 'MS-500'.")
+else:
+    print("\nAll certifications acquired!")
