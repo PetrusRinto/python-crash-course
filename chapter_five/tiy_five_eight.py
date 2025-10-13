@@ -2,7 +2,11 @@
 # 5-8 Hello Admin.
 
 # Username list.
-usernames = ['admin', 'rufus', 'guido', 'barry', 'lovelace']
+usernames = []
+
+# Empty list test
+if usernames == []:
+    print("We need to find some users!")
 
 # User greeting.
 for username in usernames:
