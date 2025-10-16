@@ -1,7 +1,7 @@
 # Patrick 16.10.2025.
 # 5-11 Ordinal Numbers.
 
-numbers = [numbers for numbers in range(1, 10)]
+numbers = range(1, 10)
 
 for num in numbers:
     if num > 3:
