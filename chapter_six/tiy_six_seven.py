@@ -5,21 +5,21 @@
 mhamilton = {
     'first': 'margaret',
     'last': 'hamilton',
-    'age': '89',
+    'age': 89,
     'city': 'paoli'
     }
 
 alovelace = {
     'first': 'ada',
     'last': 'lovelace',
-    'age': '36',
+    'age': 36,
     'city': 'london'
     }
 
 aturing = {
     'first': 'alan',
     'last': 'turing',
-    'age': '41',
+    'age': 41,
     'city': 'london'
     }
 
