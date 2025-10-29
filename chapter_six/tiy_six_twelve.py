@@ -1,5 +1,5 @@
 # Patrick 29.10.2025.
-# 6-11 Cities.
+# 6-11 Cities. / 6-12 Extensions.
 
 # Dictionary of cities.
 cities = {
@@ -30,7 +30,7 @@ for city, city_info in cities.items():
     population = str(population)
     fact = city_info['fact']
     
-# If statements for output format.
+    # If statements for population format.
     if len(population) > 7:
         population = f"{population[:2]} million"
     elif len(population) > 6:
@@ -41,4 +41,9 @@ for city, city_info in cities.items():
         population = f"{population[:2]} {population[2:]}"
     elif len(population) <= 4:
         population = population
-# I will revisit and clean up this mess, I have an idea.
+
+    # Output.
+    print(f"\n{city_name.title()}:")
+    print(f"\t- {city_name.title()} is in {country.title()}.")
+    print(f"\t- It's population is approximately {population}.")
+    print(f"\t- Random fact: {fact}.")
