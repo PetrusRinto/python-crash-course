@@ -5,45 +5,35 @@
 cities = {
     'tokyo': {
         'country': 'japan',
-        'population': 37000000,
+        'population': 37_000_000,
         'fact': 'Tokyo backwards is Kyoto in japanese',
         },
 
     'berlin': {
         'country': 'germany',
-        'population': 3700000,
+        'population': 3_700_000,
         'fact': 'Berlin was the capital of Prussia between 1701-1871',
         },
 
     'steinkjer': {
         'country': 'norway',
-        'population': 13060,
-        'fact': 'Small town in Norway, where I had my first apprenticeship',
+        'population': 13_060,
+        'fact': 'Small town in Norway where I had my first apprenticeship',
         },
     }
 
 # Loop.
-for city, city_info in cities.items():
-    city_name = city
-    country = city_info['country']
-    population = city_info['population']
-    population = str(population)
-    fact = city_info['fact']
+for city, info in cities.items():
+    population = info['population']
     
-    # If statements for population format.
-    if len(population) > 7:
-        population = f"{population[:2]} million"
-    elif len(population) > 6:
-        population = f"{population[:1]}.{str(population)[1]} million"
-    elif len(population) == 6:
-        population = f"{population[:3]} thousand"
-    elif len(population) > 4:
-        population = f"{population[:2]} {population[2:]}"
-    elif len(population) <= 4:
-        population = population
+    # Fewer lines of if/elif statements.
+    if population >= 1_000_000:
+        population = f"{population // 1_000_000} million"
+    elif population >= 1_000:
+        population = f"{population // 1_000} thousand"
 
-    # Output.
-    print(f"\n{city_name.title()}:")
-    print(f"\t- {city_name.title()} is in {country.title()}.")
-    print(f"\t- It's population is approximately {population}.")
-    print(f"\t- Random fact: {fact}.")
+    # Cleaner output.
+    print(f"\n{city.title()}:")
+    print(f"\t- {city.title()} is in {info['country'].title()}.")
+    print(f"\t- Its population is approximately {population}.")
+    print(f"\t- Random fact: {info['fact']}.")
