@@ -6,7 +6,7 @@ cities = {
     'tokyo': {
         'country': 'japan',
         'population': 37_000_000,
-        'fact': 'Tokyo backwards is Kyoto in japanese',
+        'fact': 'Tokyo backwards is Kyoto in Japanese',
         },
 
     'berlin': {
