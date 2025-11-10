@@ -1,13 +1,24 @@
-# Patrick 30.10.2025.
-# 7-8 Deli.
+# Patrick 30.10.2025 / 07.11.2025 / 10.11.2025.
+# 7-8 Deli. / 7-9 No Pastrami.
 
 # List of sandwiches.
 sandwich_orders = [
     'tuna sandwich',
+    'pastrami',
     'chicken sandwich',
+    'pastrami',
     'ham sandwich',
+    'pastrami',
     'avocado sandwich'
     ]
+
+# Message from deli.
+print('\nWe have ran out of pastrami.\n')
+
+# Loop to remove pastrami.
+while 'pastrami' in sandwich_orders:
+    # Removing value with 'remove'.
+    sandwich_orders.remove('pastrami')
 
 # Empty list of finished sandwiches.
 finished_sandwiches = []
