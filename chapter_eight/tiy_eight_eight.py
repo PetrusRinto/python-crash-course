@@ -28,7 +28,9 @@ while enter_album:
     if title == 'q':
         break
 
-    songs_question = input(f"Do you know how many songs there is in {title.title()}? (yes / no) ")
+    songs_question = input(
+        f"Do you know how many songs there is in {title.title()}? (yes / no) "
+        )
     if songs_question == 'no':
         songs = None
         enter_album = False
