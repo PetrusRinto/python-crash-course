@@ -12,8 +12,10 @@ class Dog:
     
     def sit(self):
         """Simulate a dog sitting in response to a command."""
-        print(F"{self.name} is now sitting.")
+        print(f"{self.name} is now sitting.")
     
     def roll_over(self):
         """Simulate rolling over in response to a command."""
         print(f"{self.name} rolled over!")
+
+my_dog = Dog('Willie', 6)
