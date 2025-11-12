@@ -1,9 +1,9 @@
 # Patrick 12.11.2025.
 # Testing modules with the function from 8-14.
 
-import tiy_eight_fourteen
+from tiy_eight_fourteen import make_car as mc
 
-car = tiy_eight_fourteen.make_car('toyota', 'aygo',
+car = mc('toyota', 'aygo',
                 color='green',
                 facelift=True)
 print(car)
