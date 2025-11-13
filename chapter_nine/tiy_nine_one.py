@@ -19,11 +19,3 @@ class Restaurant:
         """Simulating that the restaurant is open."""
         
         print(f"{self.restaurant_name} is open!")
-
-restaurant = Restaurant('Python Delight', 'Dutch')
-
-print(restaurant.restaurant_name)
-print(f"{restaurant.cuisine_type}\n")
-
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
