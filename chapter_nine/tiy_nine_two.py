@@ -11,4 +11,4 @@ restaurant_3 = Restaurant('Python Delight', 'dutch')
 restaurants = [restaurant_1, restaurant_2, restaurant_3]
 
 for restaurant in restaurants:
-    print(f"{restaurant.describe_restaurant()}\n")
+    restaurant.describe_restaurant()
