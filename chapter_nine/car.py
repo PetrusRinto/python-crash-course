@@ -31,9 +31,15 @@ class Car:
             print("You can't roll back an odometer!")
     
     def increment_odometer(self, miles):
-        """Add the given amount to the odometer reading."""
-        self.odometer_reading += miles
-    
+        """
+        Add the given amount to the odometer reading.
+        Reject the value if it is a negative.
+        """
+        if miles > 0:
+            self.odometer_reading += miles
+        else:
+            print("You can't roll back an odometer!")
+
 my_used_car = Car('toyota', 'aygo', '2011')
 print(my_used_car.get_descriptive_name())
 
