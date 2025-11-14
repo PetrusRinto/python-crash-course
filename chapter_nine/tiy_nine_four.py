@@ -1,5 +1,5 @@
-# Patrick 13.11.2025.
-# 9-1 Restaurant.
+# Patrick 14.11.2025.
+# 9-4 Number Served.
 
 class Restaurant:
     """Simple class describing a restaurant."""
@@ -18,3 +18,13 @@ class Restaurant:
     def open_restaurant(self):
         """Simulating that the restaurant is open."""  
         print(f"{self.restaurant_name} is open!")
+    
+    def read_number_served(self):
+        """Reads the number of servings."""
+        print(f"Served: {self.number_served}")
+
+# Creating three instances from the class in 9-1.
+restaurant = Restaurant('Python Delight', 'dutch')
+
+restaurant.number_served = 12
+restaurant.read_number_served()
