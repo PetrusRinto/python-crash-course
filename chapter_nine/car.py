@@ -9,7 +9,7 @@ class Car:
         self.make = make
         self.model = model
         self.year = year
-        self.odometer_reading = 0
+        self.odometer_reading = 100
     
     def get_descriptive_name(self):
         """Return a neatly formatted descriptive name."""
