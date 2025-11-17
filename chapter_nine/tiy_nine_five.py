@@ -11,7 +11,15 @@ user_3 = User('Bestus', 'Testus', 'Filler', 'Global Sealer')
 users = [user_1, user_2, user_3]
 
 for user in users:
-    user.describe_user()
     user.increment_login_attempts()
+    user.increment_login_attempts()
+    user.increment_login_attempts()
+
+for user in users:
+    user.describe_user()
     user.read_login_attempts()
-    user.greet_user()
+
+for user in users:
+    user.describe_user()
+    user.reset_login_attempts()
+    user.read_login_attempts()

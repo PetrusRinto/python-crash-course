@@ -30,6 +30,10 @@ class User:
     def increment_login_attempts(self):
         """Add the given amount to login attempts reading."""
         self.login_attempts += 1
+    
+    def reset_login_attempts(self):
+        """Resets the amount of login attempts."""
+        self.login_attempts = 0
 
 # user_1 = User('Petrus', 'Rinto', 'Cloud Engineer', 'Global Reader')
 # user_2 = User('Bekkus', 'Plantus', 'Pharmacist', 'Global Healer')
