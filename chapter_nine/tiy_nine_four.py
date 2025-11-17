@@ -22,9 +22,21 @@ class Restaurant:
     def read_number_served(self):
         """Reads the number of servings."""
         print(f"Served: {self.number_served}")
+    
+    def set_number_served(self, servings):
+        """Sets the number of servings."""
+        self.number_served = servings
+    
+    def increment_number_served(self, served):
+        """Add the given amount of servings."""
+        self.number_served += served
+
 
 # Creating three instances from the class in 9-1.
 restaurant = Restaurant('Python Delight', 'dutch')
 
-restaurant.number_served = 12
+restaurant.set_number_served(12)
+restaurant.read_number_served()
+
+restaurant.increment_number_served(4)
 restaurant.read_number_served()
