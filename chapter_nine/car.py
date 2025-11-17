@@ -39,12 +39,13 @@ class Car:
             self.odometer_reading += miles
         else:
             print("You can't roll back an odometer!")
+    
+class ElectricCar(Car):
+    """Represents aspects of a car, specific to electric vehicles."""
 
-my_used_car = Car('toyota', 'aygo', '2011')
-print(my_used_car.get_descriptive_name())
+    def __init__(self, make, model, year):
+        """Initialize attributes of the parent class."""
+        super().__init__(make, model, year)
 
-my_used_car.update_odometer(23_500)
-my_used_car.read_odometer()
-
-my_used_car.increment_odometer(100)
-my_used_car.read_odometer()
+my_leaf = ElectricCar('nissan', 'leaf', '2024')
+print(my_leaf.get_descriptive_name())
