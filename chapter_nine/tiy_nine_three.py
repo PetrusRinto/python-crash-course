@@ -10,6 +10,7 @@ class User:
         self.last_name = last_name
         self.title = title
         self.role = role
+        self.login_attempts = 0
     
     def describe_user(self):
         """A method that summurize the user's details."""
@@ -20,14 +21,19 @@ class User:
     
     def greet_user(self):
         """A method for greeting the user."""
-        print(f"Greetings {self.first_name}!\n")
+        print(f"Greetings {self.first_name}!")
 
-user_1 = User('Petrus', 'Rinto', 'Cloud Engineer', 'Global Reader')
-user_2 = User('Bekkus', 'Plantus', 'Pharmacist', 'Global Healer')
-user_3 = User('Bestus', 'Testus', 'Filler', 'Global Sealer')
+    def read_login_attempts(self):
+        """Reads the amount of login attempts."""
+        print(f"Attempted logins: {self.login_attempts}")
 
-users = [user_1, user_2, user_3]
+# user_1 = User('Petrus', 'Rinto', 'Cloud Engineer', 'Global Reader')
+# user_2 = User('Bekkus', 'Plantus', 'Pharmacist', 'Global Healer')
+# user_3 = User('Bestus', 'Testus', 'Filler', 'Global Sealer')
 
-for user in users:
-    user.describe_user()
-    user.greet_user()
+# users = [user_1, user_2, user_3]
+
+# for user in users:
+#     user.describe_user()
+#     user.greet_user()
+#     user.read_login_attempts()
