@@ -19,13 +19,17 @@ class User:
         print(f"\tTitle: {self.title}")
         print(f"\tRole: {self.role}")
     
+    def read_login_attempts(self):
+        """Reads the amount of login attempts."""
+        print(f"\tAttempted logins: {self.login_attempts}")
+    
     def greet_user(self):
         """A method for greeting the user."""
         print(f"Greetings {self.first_name}!")
-
-    def read_login_attempts(self):
-        """Reads the amount of login attempts."""
-        print(f"Attempted logins: {self.login_attempts}")
+    
+    def increment_login_attempts(self):
+        """Add the given amount to login attempts reading."""
+        self.login_attempts += 1
 
 # user_1 = User('Petrus', 'Rinto', 'Cloud Engineer', 'Global Reader')
 # user_2 = User('Bekkus', 'Plantus', 'Pharmacist', 'Global Healer')

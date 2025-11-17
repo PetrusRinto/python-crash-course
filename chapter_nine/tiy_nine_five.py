@@ -12,5 +12,6 @@ users = [user_1, user_2, user_3]
 
 for user in users:
     user.describe_user()
-    user.greet_user()
+    user.increment_login_attempts()
     user.read_login_attempts()
+    user.greet_user()
