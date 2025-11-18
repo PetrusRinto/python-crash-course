@@ -1,6 +1,9 @@
 # Patrick 18.11.2025.
 # 9-8 Privileges.
 
+# 18.11.2025.
+# 9-11 Imported Admin.
+
 class User:
     """Simulating details in a simple user profile."""
 
@@ -58,6 +61,3 @@ class Admin(User):
         """Initiates attributes from the parent class."""
         super().__init__(first_name, last_name, title, role)
         self.privileges = Privileges()
-
-admin = Admin('Super', 'User', 'Administrator', 'Global Administrator')
-admin.privileges.show_privileges()
