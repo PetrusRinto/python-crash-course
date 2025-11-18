@@ -4,6 +4,8 @@
 # 18.11.2025.
 # 9-10 Imported Restaurant.
 
+"""A set of classes representing restaurants."""
+
 class Restaurant:
     """Simple class describing a restaurant."""
 

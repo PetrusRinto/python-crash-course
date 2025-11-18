@@ -1,6 +1,8 @@
 # Patrick 18.11.2025.
 # 9-12 Multiple Modules.
 
+"""A set of classes that represent an admin user."""
+
 from user import User
 
 class Privileges:

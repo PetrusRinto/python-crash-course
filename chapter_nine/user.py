@@ -6,6 +6,8 @@
 
 # 9-12 Multiple Modules.
 
+"""A set of classes that can be used to represent a user."""
+
 class User:
     """Simulating details in a simple user profile."""
 
