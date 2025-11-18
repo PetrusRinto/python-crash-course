@@ -1,6 +1,9 @@
 # Patrick 17.11.2025.
 # 9-6 Ice Cream Stand.
 
+# 18.11.2025.
+# 9-10 Imported Restaurant.
+
 class Restaurant:
     """Simple class describing a restaurant."""
 
@@ -12,8 +15,8 @@ class Restaurant:
     
     def describe_restaurant(self):
         """Prints the restaurant name and cuisine type."""
-        print(f"\nThe restaurant's name is {self.restaurant_name}")
-        print(f"{self.restaurant_name}'s cuisine is {self.cuisine_type}")
+        print(f"The restaurant's name is {self.restaurant_name}.")
+        print(f"{self.restaurant_name}'s cuisine is {self.cuisine_type}.")
     
     def open_restaurant(self):
         """Simulating that the restaurant is open."""  
@@ -32,7 +35,3 @@ class IceCreamStand(Restaurant):
         """Simple method to display flavors."""
         for flavor in self.flavors:
             print(f"- {flavor}")
-
-ice_cream_stand = IceCreamStand('Creams & Ice', 'ice cream')
-ice_cream_stand.describe_restaurant()
-ice_cream_stand.read_flavors()
