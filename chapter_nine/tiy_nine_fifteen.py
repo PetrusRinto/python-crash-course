@@ -14,16 +14,32 @@ class Lottery:
     def pull_items(self, count=4):
         """A method that represents "pulling" the winner."""
         available = self.pool[:]
-        ticket = []
+        win_ticket = []
 
         # While loop to avoid duplicates.
-        while len(ticket) < count:
+        while len(win_ticket) < count:
             pick = choice(available)
-            ticket.append(pick)
+            win_ticket.append(pick)
             available.remove(pick)
-        return ticket
+        return win_ticket
+    
 
+class Ticket(Lottery):
+    """A class representing a player's ticket."""
+
+    def __init__(self, ticket):
+        """Initializing attributes for the ticket."""
+        self.ticket = ticket
+
+class Judge:
+    """A class deciding the winner or loser."""
+
+    def __init__(self, judge):
+        """Initializing attributes for the judge."""
+        self.judge = judge
+    
 lottery = Lottery()
+ticket = Ticket()
 lottery.pull_items()
 
 my_ticket = [2, 'e', 'c', 6]
