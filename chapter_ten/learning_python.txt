@@ -1,0 +1,9 @@
+In python you can create modules and classes.
+In python you can create functions to execute a certain task and reuse it later.
+In python you can loop through large files and find valuable data.
+In python you can have a lot of fun.
+In python you can automate alot of task that otherwise is heavy.
+In python you can make games.
+In python you can create programs that can recieve user input and use that input as a variable.
+In python you can manipulate, sort, format, add, remove and structure data pretty much how you want.
+In python you can create powerfuil programs making your life easier.
