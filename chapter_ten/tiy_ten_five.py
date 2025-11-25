@@ -11,13 +11,11 @@ active = True
 while active:
 
     guest_name = input('\nWhat is your name? ')
-    contents += f"{guest_name}\n"
-
-    question = input('Continue? y/n ')
-    if question == 'y':
+    if guest_name == 'q':
+        active = False
         continue
     else:
-        active = False
+        contents += f"{guest_name}\n"
 
 path = Path('guest_book.txt')
 path.write_text(contents)
