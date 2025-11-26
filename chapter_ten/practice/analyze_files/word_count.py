@@ -15,7 +15,7 @@ def count_words(path):
         num_words = len(words)
         print(f"The file {path} has about {num_words} words.")
 
-filenames = ['alice.txt']
+filenames = ['alice.txt', 'jargon.txt', 'delightspeech.txt']
 
 for filename in filenames:
     path = Path(filename)
