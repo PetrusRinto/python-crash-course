@@ -2,7 +2,6 @@
 # 10-8 Cats and Dogs.
 
 from pathlib import Path
-from sys import path_hooks
 
 filenames = ['cats.txt', 'dogs.txt']
 
