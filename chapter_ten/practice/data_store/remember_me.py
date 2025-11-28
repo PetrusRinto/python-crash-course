@@ -4,10 +4,15 @@
 from pathlib import Path
 import json
 
-username = input('What is your name? ').lower()
-
 path = Path('username.json')
-contents = json.dumps(username)
-path.write_text(contents)
 
-print(f"We'll remember you when you come back, {username.title()}!")
+# New pathlib module instead of try-except-else.
+if path.exists():
+    contents = path.read_text()
+    username = json.loads(contents)
+    print(f"Welcome back, {username.title()}!")
+else:
+    username = input('What is your name? ').lower()
+    contents = json.dumps(username)
+    path.write_text(contents)
+    print(f"We'll remember you when you come back, {username.title()}!")
