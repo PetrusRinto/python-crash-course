@@ -43,6 +43,7 @@ def greet_user():
         print(f'Age: {data['age']}')
     else:
         data = get_new_data(path)
-        print(f"We'll remember you when you come back, {data['username'].title()}!")
+        print(f"We'll remember you when you come back, "
+              f"{data['username'].title()}!")
 
 greet_user()
