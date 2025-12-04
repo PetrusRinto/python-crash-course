@@ -18,11 +18,13 @@ def get_new_data(path):
     username = input('What is your name? ').lower()
     profession = input('What is your profession? ').lower()
     age = input('What is your age? ')
+    goal = input('What is your life goal? ')
 
     data = {
         'username': f'{username}',
         'profession': f'{profession}',
-        'age': f'{age}'
+        'age': f'{age}',
+        'goal': f'{goal}'
         }
 
     contents = json.dumps(data)
@@ -33,14 +35,23 @@ def greet_user():
     """Greet the user by name."""
     path = Path('data.json')
     data = get_stored_data(path)
-    verify = input(f'Is {data['username'].title()} your name? (y/n) ')
+    
+    if data:
 
-    if verify == 'y':
-        print(f"Welcome back, {data['username'].title()}!")
-        print('\nThis is our saved data about you:')
-        print(f'Username: {data['username'].title()}')
-        print(f'Profession: {data['profession'].title()}')
-        print(f'Age: {data['age']}')
+        verify = input(f'Is {data['username'].title()} your name? (y/n) ')
+
+        if verify == 'y':
+            print(f"Welcome back, {data['username'].title()}!")
+            print('\nThis is our saved data about you:')
+            print(f'Username: {data['username'].title()}')
+            print(f'Profession: {data['profession'].title()}')
+            print(f'Age: {data['age']}')
+            print(f'Goal: {data['goal']}')
+        else:
+            data = get_new_data(path)
+            print(f"We'll remember you when you come back, "
+                f"{data['username'].title()}!")
+
     else:
         data = get_new_data(path)
         print(f"We'll remember you when you come back, "
