@@ -21,10 +21,10 @@ def get_new_data(path):
     goal = input('What is your life goal? ')
 
     data = {
-        'username': f'{username}',
-        'profession': f'{profession}',
-        'age': f'{age}',
-        'goal': f'{goal}'
+        'username': username,
+        'profession': profession,
+        'age': age,
+        'goal': goal
         }
 
     contents = json.dumps(data)
