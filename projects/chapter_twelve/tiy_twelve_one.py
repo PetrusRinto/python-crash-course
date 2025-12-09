@@ -1,27 +1,24 @@
 # Patrick 09.12.2025.
-# Chapter 12, Alien Invasion.
+# 12-1 Blue Sky.
 
 import sys
 
 import pygame
 
 from settings import Settings
-from ship import Ship
 
-class AlienInvasion:
-    """Oveall class to manage game assets and behavior."""
+class BlueSkyGame:
+    """Creating a pygame with a blue window."""
 
     def __init__(self):
-        """Initializing the game, and create game resources."""
+        """Initializing the game, and create resources."""
         pygame.init()
         self.clock = pygame.time.Clock()
         self.settings = Settings()
 
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))
-        pygame.display.set_caption("Alien Invasion")
-
-        self.ship = Ship(self)
+        pygame.display.set_caption("Blue Sky")
     
     def run_game(self):
         """Start the main loop for the game."""
@@ -29,6 +26,7 @@ class AlienInvasion:
             self._check_events()
             self._update_screen()
             self.clock.tick(60)
+
     
     def _check_events(self):
         """Respond to keypresses and mouse events."""
@@ -39,11 +37,10 @@ class AlienInvasion:
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
-        self.ship.blitme()
-
+        
         pygame.display.flip()
 
 if __name__ == '__main__':
     # Make a game instance, and run the game.
-    ai = AlienInvasion()
-    ai.run_game()
+    bsg = BlueSkyGame()
+    bsg.run_game()
