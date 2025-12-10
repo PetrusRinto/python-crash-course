@@ -6,6 +6,7 @@ import sys
 import pygame
 
 from settings import Settings
+from tiy_twelve_two import GameCharacter
 
 class BlueSkyGame:
     """Creating a pygame with a blue window."""
@@ -19,6 +20,8 @@ class BlueSkyGame:
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Blue Sky")
+
+        self.gc = GameCharacter(self)
     
     def run_game(self):
         """Start the main loop for the game."""
@@ -37,6 +40,7 @@ class BlueSkyGame:
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
+        self.gc.blitme()
         
         pygame.display.flip()
 
