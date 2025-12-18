@@ -6,6 +6,7 @@ import sys
 import pygame
 
 from settings import Settings
+from rocket import Rocket
 
 class RocketMan:
     """Creating a pygame where you control a rocket."""
@@ -20,7 +21,7 @@ class RocketMan:
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Rocket Man")
 
-        self.bg_color = (0, 0, 0)
+        self.rocket = Rocket(self)
 
     def run_game(self):
         """Start the main loop for the game."""
@@ -32,6 +33,7 @@ class RocketMan:
             
             # Redraw the screen during each pass through the loop.
             self.screen.fill(self.settings.bg_color)
+            self.rocket.blitme()
                 
             # Make the most recently drawn screen visible.
             pygame.display.flip()
