@@ -9,12 +9,16 @@ class Rocket:
     def __init__(self, rm_game):
         """Initialize the rocket and set its starting position."""
         self.screen = rm_game.screen
+        self.settings = rm_game.settings
         self.screen_rect = rm_game.screen.get_rect()
 
         self.image = pygame.image.load('images/rocket.bmp')
         self.rect = self.image.get_rect()
 
         self.rect.center = self.screen_rect.center
+
+        self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
 
         # Movement flag.
         self.moving_right = False
@@ -25,13 +29,17 @@ class Rocket:
     def update(self):
         """Update the rocket's position based on the movement flag."""
         if self.moving_right:
-            self.rect.x += 20
+            self.x += self.settings.rocket_speed
         if self.moving_left:
-            self.rect.x -= 20
+            self.x -= self.settings.rocket_speed
         if self.moving_up:
-            self.rect.y -= 20
+            self.y -= self.settings.rocket_speed
         if self.moving_down:
-            self.rect.y += 20
+            self.y += self.settings.rocket_speed
+        
+        # Update rect object from self.x and self.y.
+        self.rect.x = self.x
+        self.rect.y = self.y
 
     def blitme(self):
         """Draw the rocket at its current position."""

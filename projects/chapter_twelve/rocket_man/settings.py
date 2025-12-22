@@ -1,4 +1,4 @@
-# Patrick 15.12.2025.
+# Patrick 15.12.2025 / 22.12.2025.
 # Settings module for the rocket game.
 
 class Settings:
@@ -10,4 +10,6 @@ class Settings:
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_color = (0, 0, 0)
-        
+
+        # Rocket settings.
+        self.rocket_speed = 10
