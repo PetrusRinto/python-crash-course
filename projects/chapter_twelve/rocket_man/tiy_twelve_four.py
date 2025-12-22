@@ -51,6 +51,8 @@ class RocketMan:
             self.rocket.moving_up = True
         elif event.key == pygame.K_DOWN:
             self.rocket.moving_down = True
+        elif event.key == pygame.K_q:
+            sys.exit()
     
     def _check_keyup_events(self, event):
         """Respond to key releases."""
