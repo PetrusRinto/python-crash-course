@@ -12,4 +12,4 @@ class Settings:
         self.bg_color = (0, 0, 0)
 
         # Rocket settings.
-        self.rocket_speed = 10
+        self.rocket_speed = 15
