@@ -6,6 +6,7 @@ import sys
 import pygame
 
 from settings import Settings
+from rocket import Rocket
 
 class SidewaysShooter:
     """Overall class to manage game assets and behavior."""
@@ -20,13 +21,14 @@ class SidewaysShooter:
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption('Sideways Shooter')
         
-        # self.rocket = 
+        self.rocket = Rocket(self)
         # self.bullets = 
     
     def run_game(self):
         """Main loop for the game."""
         while True:
             self._check_events()
+            self.rocket.update()
             # self._update_bullets()
             self._update_screen()
             self.clock.tick(60)
@@ -52,6 +54,7 @@ class SidewaysShooter:
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
+        self.rocket.blitme()
 
         pygame.display.flip()
     
