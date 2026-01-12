@@ -30,8 +30,7 @@ class SidewaysShooter:
         while True:
             self._check_events()
             self.rocket.update()
-            self.bullets.update()
-            # self._update_bullets()
+            self._update_bullets()
             self._update_screen()
             self.clock.tick(60)
     
@@ -70,6 +69,14 @@ class SidewaysShooter:
     
     def _update_bullets(self):
         """Update position of the bullets and delete old bullets."""
+        # Update bullet positions.
+        self.bullets.update()
+
+        # Get rid of bullets that have disappeared.
+        for bullet in self.bullets.copy():
+            if bullet.rect.left >= 1200:
+                self.bullets.remove(bullet)
+        print(len(self.bullets))
     
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen."""
