@@ -1,2 +1,23 @@
-# Patrick 07.01.2026.
+# Patrick 12.01.2026.
 # 12-6 Sideways Shooter.
+
+import pygame
+from pygame.sprite import Sprite
+
+class Bullet(Sprite):
+    """A class to manage bullets fired from the ship."""
+
+    def __init__(self, ss_game):
+        """Create a bullet object at the rocket's current position."""
+        super().__init__()
+        self.screen = ss_game.screen
+        self.settings = ss_game.settings
+        self.color = self.settings.bullet_color
+
+        # Create a bullet rect at (0, 0) and then set correct position.
+        self.rect = pygame.Rext(0, 0, self.settings.bullet_width,
+                                self.settings.bullet_height)
+        self.rect.midtop = ss_game.rocket.rect.midtop
+
+        # Store the bullet's position as a float.
+        self.y = float(self.rect.y)
