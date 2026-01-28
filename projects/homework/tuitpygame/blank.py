@@ -39,6 +39,8 @@ while True:
     pygame.draw.rect(screen, 'pink', score_rect.inflate(10,0))
     screen.blit(score_surf, score_rect)
 
+    pygame.draw.line(screen, 'red', (0,0), (800,400), 5)
+
     snail_rect.x -= 4
     if snail_rect.right < 0:
         snail_rect.left = 800
