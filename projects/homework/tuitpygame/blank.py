@@ -35,11 +35,9 @@ while True:
     
     screen.blit(sky_surface,(0, 0))
     screen.blit(ground_surface,(0, 300))
-    pygame.draw.rect(screen, 'pink', score_rect.inflate(0,10))
-    pygame.draw.rect(screen, 'pink', score_rect.inflate(10,0))
+    pygame.draw.rect(screen, 'pink', score_rect.inflate(0, 10))
+    pygame.draw.rect(screen, 'pink', score_rect.inflate(10, 0))
     screen.blit(score_surf, score_rect)
-
-    pygame.draw.line(screen, 'red', (0,0), (800,400), 5)
 
     snail_rect.x -= 4
     if snail_rect.right < 0:
