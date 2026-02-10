@@ -37,26 +37,28 @@ class Space:
         """Create the cluster of stars."""
         # Create a star and keep adding stars until there's no room left.
         star = Star(self)
-        random_number = randint(1, 5)
         star_width, star_height = star.rect.size
 
         current_x, current_y = star_width, star_height
         while current_y < (self.settings.screen_height - 1 * star_height):
             while current_x < (self.settings.screen_width - 1 * star_width):
                 self._create_star(current_x, current_y)
-                current_x += int(random_number) * star_width
+                current_x += 2 * star_width
             
             # Finished a row; reset x value, and increment y value.
             current_x = star_width
-            current_y += int(random_number) * star_height
+            current_y += 2 * star_height
 
     def _create_star(self, x_position, y_position):
-        """Create a star and place it in the cluster."""
-        random_number = randint(-10, 10)
+        """Create a star and place it in the cluster with randomness."""
         new_star = Star(self)
-        new_star.x = x_position
-        new_star.rect.x = x_position + int(random_number)
-        new_star.rect.y = y_position - int(random_number)
+
+        offset_x = randint(-10, 10)
+        offset_y = randint(-10,10)
+
+        new_star.rect.x = x_position + offset_x
+        new_star.rect.y = y_position + offset_y
+
         self.stars.add(new_star)
 
     
