@@ -67,11 +67,11 @@ class Raindrops:
         """Update the position of all droplets on the grid."""
         self.droplets.update()
 
-        # Get rid of droplets that have disappeared.
+        # Move droplets that have disappeared to the top of the screen.
         for droplet in self.droplets.copy():
             if droplet.rect.top >= 800:
-                self.droplets.remove(droplet)
-    
+                droplet.y = 0
+
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
