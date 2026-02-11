@@ -8,6 +8,7 @@ import pygame
 from settings import Settings
 from rocket import Rocket
 from bullet import Bullet
+from alien import Alien
 
 class SidewaysShooter:
     """Overall class to manage game assets and behavior."""
@@ -24,6 +25,9 @@ class SidewaysShooter:
         
         self.rocket = Rocket(self)
         self.bullets = pygame.sprite.Group()
+        self.aliens = pygame.sprite.Group()
+
+        self._create_fleet()
     
     def run_game(self):
         """Main loop for the game."""
@@ -33,6 +37,24 @@ class SidewaysShooter:
             self._update_bullets()
             self._update_screen()
             self.clock.tick(60)
+    
+    def _create_fleet(self):
+        """Create an alien and place it on the left side of the screen."""
+        alien = Alien(self)
+        alien_width, alien_height = alien.rect.x, alien.rect.y
+
+        current_x, current_y = alien_width, alien_height
+        while current_y < (self.settings.screen_height - alien_height):
+            self._create_alien(current_x, current_y)
+            current_y += alien_height
+    
+    def _create_alien(self, x_position, y_position):
+        """Create an alien and place it in the row."""
+        new_alien = Alien(self)
+        new_alien.x = x_position
+        new_alien.rect.x = x_position
+        new_alien.rect.y = y_position
+        self.aliens.add(new_alien)
     
     def _check_events(self):
         """Respond to key events."""
@@ -76,7 +98,6 @@ class SidewaysShooter:
         for bullet in self.bullets.copy():
             if bullet.rect.left >= 1200:
                 self.bullets.remove(bullet)
-        print(len(self.bullets))
     
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen."""
@@ -84,6 +105,7 @@ class SidewaysShooter:
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.rocket.blitme()
+        self.aliens.draw(self.screen)
 
         pygame.display.flip()
     
