@@ -35,6 +35,7 @@ class SidewaysShooter:
             self._check_events()
             self.rocket.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
             self.clock.tick(60)
     
@@ -44,9 +45,7 @@ class SidewaysShooter:
         alien_width, alien_height = alien.rect.x, alien.rect.y
 
         current_x, current_y = alien_width, alien_height
-        while current_y < (self.settings.screen_height - alien_height):
-            self._create_alien(current_x, current_y)
-            current_y += alien_height
+        self._create_alien(current_x, current_y)
     
     def _create_alien(self, x_position, y_position):
         """Create an alien and place it in the row."""
@@ -98,6 +97,10 @@ class SidewaysShooter:
         for bullet in self.bullets.copy():
             if bullet.rect.left >= 1200:
                 self.bullets.remove(bullet)
+    
+    def _update_aliens(self):
+        """Update aliens' position on the screen."""
+        self.aliens.update()
     
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen."""
