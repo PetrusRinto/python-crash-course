@@ -5,6 +5,8 @@ import sys
 
 import pygame
 
+from random import randint
+
 from settings import Settings
 from rocket import Rocket
 from bullet import Bullet
@@ -40,7 +42,7 @@ class SidewaysShooter:
             self.clock.tick(60)
     
     def _create_fleet(self):
-        """Create an alien and place it on the left side of the screen."""
+        """Create an alien and place it on the right side of the screen."""
         alien = Alien(self)
         alien_width, alien_height = alien.rect.x, alien.rect.y
 
@@ -50,10 +52,16 @@ class SidewaysShooter:
     def _create_alien(self, x_position, y_position):
         """Create an alien and place it in the row."""
         new_alien = Alien(self)
+        screen_h = self.settings.screen_height
+
+        offset_y = randint(new_alien.rect.y, (screen_h - 3 * new_alien.rect.y))
+
         new_alien.x = x_position
         new_alien.rect.x = x_position
-        new_alien.rect.y = y_position
-        self.aliens.add(new_alien)
+        new_alien.rect.y = y_position + offset_y
+
+        if len(self.aliens.copy()) < self.settings.aliens_allowed:
+            self.aliens.add(new_alien)
     
     def _check_events(self):
         """Respond to key events."""
@@ -85,8 +93,9 @@ class SidewaysShooter:
     
     def _fire_bullet(self):
         """Create a new bullet and add it to the bullets group."""
-        new_bullet = Bullet(self)
-        self.bullets.add(new_bullet)
+        if len(self.bullets) < self.settings.bullets_allowed:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
     
     def _update_bullets(self):
         """Update position of the bullets and delete old bullets."""
@@ -97,10 +106,27 @@ class SidewaysShooter:
         for bullet in self.bullets.copy():
             if bullet.rect.left >= 1200:
                 self.bullets.remove(bullet)
+        
+        self._check_bullet_alien_collisions()
+
+    def _check_bullet_alien_collisions(self):
+        """Respond to bullet-alien collisions."""
+        # Remove any bullets and aliens that have collided.
+        collisions = pygame.sprite.groupcollide(
+                self.bullets, self.aliens, True, True)
+
+        if not self.aliens:
+            # Destroy existing bullets and create new fleet.
+            self.bullets.remove()
+            self._create_fleet()
     
     def _update_aliens(self):
         """Update aliens' position on the screen."""
         self.aliens.update()
+
+        for alien in self.aliens.copy():
+            if alien.rect.x <= 600:
+                self._create_fleet()
     
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen."""

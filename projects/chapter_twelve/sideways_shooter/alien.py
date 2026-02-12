@@ -17,13 +17,13 @@ class Alien(Sprite):
         self.image = pygame.image.load('images/alien_ship.bmp')
         self.rect = self.image.get_rect()
 
-        # Start each new alien on the right edge of the screen.
-        self.rect.x = self.settings.screen_width - 100
+        # Start each new alien off the right edge of the screen.
+        self.rect.x = self.settings.screen_width + 2
         self.rect.y = self.rect.height
         
         # Store the alien's exact horizontal position.
         self.x = float(self.rect.x)
-        print(self.x)
+        # print(self.x)
 
     def update(self):
         """Move the alien to the left."""
