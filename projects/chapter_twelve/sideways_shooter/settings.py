@@ -22,5 +22,5 @@ class Settings:
         self.bullets_allowed = 3
 
         # Alien settings.
-        self.alien_speed = 3.0
+        self.alien_speed = 6.0
         self.aliens_allowed = 2

@@ -123,10 +123,13 @@ class SidewaysShooter:
     def _update_aliens(self):
         """Update aliens' position on the screen."""
         self.aliens.update()
+        position = randint(400, 800)
 
         for alien in self.aliens.copy():
-            if alien.rect.x <= 600:
+            if alien.rect.x <= position:
                 self._create_fleet()
+            if alien.rect.right <= 0:
+                self.aliens.remove(alien)
     
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen."""

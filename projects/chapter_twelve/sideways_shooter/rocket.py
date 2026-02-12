@@ -8,6 +8,7 @@ class Rocket:
 
     def __init__(self, ss_game):
         """Initialize the rocket and set its starting position."""
+        super().__init__()
         self.screen = ss_game.screen
         self.settings = ss_game.settings
         self.screen_rect = ss_game.screen.get_rect()
