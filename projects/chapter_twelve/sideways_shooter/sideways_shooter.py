@@ -2,6 +2,7 @@
 # 12-6 Sideways Shooter.
 
 import sys
+from time import sleep
 
 import pygame
 
@@ -119,6 +120,22 @@ class SidewaysShooter:
             # Destroy existing bullets and create new fleet.
             self.bullets.remove()
             self._create_fleet()
+    
+    def _rocket_hit(self):
+        """Respond to the rocket being hit by an alien."""
+        if self.stats.rockets_left > 0:
+            # Decrement rockets_left.
+            self.stats.rockets_left -= 1
+            # Get rid of any remaining bullets and aliens.
+            self.bullets.empty()
+            self.aliens.empty()
+            # Create a new fleet and center the ship.
+            self._create_fleet()
+            self.rocket.center_rocket()
+            # Pause.
+            sleep(0.5)
+        else:
+            self.game_active = False
     
     def _update_aliens(self):
         """Update aliens' position on the screen."""

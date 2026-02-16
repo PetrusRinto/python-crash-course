@@ -13,6 +13,7 @@ class Settings:
 
         # Rocket settings.
         self.rocket_speed = 10
+        self.rocket_limit = 3
 
         # Bullet settings.
         self.bullet_speed = 10.0
