@@ -24,6 +24,11 @@ class Rocket:
         # Movement flag.
         self.moving_up = False
         self.moving_down = False
+    
+    def center_rocket(self):
+        """Center the ship on the screen."""
+        self.rect.midleft = self.screen_rect.midleft
+        self.y = float(self.rect.y)
 
     def update(self):
         """Update the rocket's position based on the movement flag."""

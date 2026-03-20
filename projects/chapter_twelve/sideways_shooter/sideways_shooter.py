@@ -9,6 +9,7 @@ import pygame
 from random import randint
 
 from settings import Settings
+from game_stats import GameStats
 from rocket import Rocket
 from bullet import Bullet
 from alien import Alien
@@ -25,20 +26,29 @@ class SidewaysShooter:
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption('Sideways Shooter')
+
+        # Create an instance to store game statistics.
+        self.stats = GameStats(self)
         
         self.rocket = Rocket(self)
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
 
         self._create_fleet()
+
+        # Start SidewaysShooter in an active state.
+        self.game_active = True
     
     def run_game(self):
         """Main loop for the game."""
         while True:
             self._check_events()
-            self.rocket.update()
-            self._update_bullets()
-            self._update_aliens()
+
+            if self.game_active:
+                self.rocket.update()
+                self._update_bullets()
+                self._update_aliens()
+
             self._update_screen()
             self.clock.tick(60)
     
@@ -63,6 +73,14 @@ class SidewaysShooter:
 
         if len(self.aliens.copy()) < self.settings.aliens_allowed:
             self.aliens.add(new_alien)
+    
+    def _check_aliens_edge(self):
+        """Check if anye aliens have reached the edge of the screen."""
+        for alien in self.aliens.sprites():
+            if alien.rect.left <= 0:
+                # Treat this the same as if the ship got hit.
+                self._rocket_hit()
+                break
     
     def _check_events(self):
         """Respond to key events."""
@@ -140,13 +158,19 @@ class SidewaysShooter:
     def _update_aliens(self):
         """Update aliens' position on the screen."""
         self.aliens.update()
+
+        # Look for alien-rocket collisions.
+        if pygame.sprite.spritecollideany(self.rocket, self.aliens):
+            self._rocket_hit()
+
+        # Look for aliens hitting the edge of the screen.
+        self._check_aliens_edge()
+
         position = randint(400, 800)
 
         for alien in self.aliens.copy():
             if alien.rect.x <= position:
                 self._create_fleet()
-            if alien.rect.right <= 0:
-                self.aliens.remove(alien)
     
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen."""
